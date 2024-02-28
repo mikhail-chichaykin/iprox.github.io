@@ -1,32 +1,9 @@
-[
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.grabtaxi.passenger",
-      "sha256_cert_fingerprints": [
-        "1F:4D:D5:4C:31:C5:6E:32:BE:03:4B:F1:21:1F:AA:51:C4:9F:70:61:A8:EA:CE:04:42:99:75:BF:C0:A5:37:8B"
-      ]
-    }
-  },
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.grabtaxi.passenger.beta",
-      "sha256_cert_fingerprints": [
-        "1F:4D:D5:4C:31:C5:6E:32:BE:03:4B:F1:21:1F:AA:51:C4:9F:70:61:A8:EA:CE:04:42:99:75:BF:C0:A5:37:8B"
-      ]
-    }
-  },
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.grabtaxi.passenger.gea",
-      "sha256_cert_fingerprints": [
-        "1F:4D:D5:4C:31:C5:6E:32:BE:03:4B:F1:21:1F:AA:51:C4:9F:70:61:A8:EA:CE:04:42:99:75:BF:C0:A5:37:8B"
-      ]
-    }
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.grabtaxi.pax1",
+    "sha256_cert_fingerprints":
+    ["37:60:AE:CA:16:0C:8F:8C:D4:F0:6A:B9:0A:EC:F1:D5:08:E7:F9:4C:73:6E:68:48:5A:7E:8D:7C:4E:D9:70:18"]
   }
-]
+}
