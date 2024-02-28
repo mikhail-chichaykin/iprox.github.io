@@ -1,0 +1,31 @@
+{
+  "webcredentials": {
+    "apps": [
+      "C9YMA892DM.com.grabtaxi.iphone",
+      "VU3G7T53K5.com.grabtaxi.iphone.dogfood",
+      "VU3G7T53K5.com.grab.passenger.dogfood.debug",
+      "C9YMA892DM.com.grabtaxi.pax.gea"
+    ]
+  },
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "C9YMA892DM.com.grabtaxi.iphone",
+        "paths": ["*"]
+      },
+      {
+        "appID": "VU3G7T53K5.com.grabtaxi.iphone.dogfood",
+        "paths": ["*"]
+      },
+      {
+        "appID": "VU3G7T53K5.com.grab.passenger.dogfood.debug",
+        "paths": ["*"]
+      },
+      {
+        "paths": ["*"],
+        "appID": "C9YMA892DM.com.grabtaxi.pax.gea"
+      }
+    ]
+  }
+}
