@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <style>
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 50px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        display: block;
+      }
+      #urlInput {
+        width: 80%;
+        padding: 10px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <input type='text' id='urlInput' placeholder='Enter your custom URL here...'>
+      <button id="customOnclickBtn">Custom onelink</button>
+
+      <button id="longOnclickBtn">Long onelink</button>
+      <button id="shortOnclickBtn">Short onelink</button>
+      
+      <script type="text/javascript">
+        const input = 'https://grab.onelink.me/2695613898?pid=instagram_organic&c=SG_GF_170823_instagram_organic_&is_retargeting=true&af_dp=grab%3A%2F%2Fopen%3FscreenType%3DGRABFOOD%26categoryShortcutID%3D3735&af_web_dp=https%3A%2F%2Ffood.grab.com%2Fsg%2Fen%2F&af_ios_url=https%3A%2F%2Ffood.grab.com%2Fsg%2Fen%2F&af_force_deeplink=true';
+      
+        // Assign events if on Android and `af_dp` exists.
+        if (/Android/.test(navigator.userAgent) && new URL(input).searchParams.has('af_dp')) {
+          const appLink = new URL(input).searchParams.get('af_dp');
+          const parts = appLink.split('://');
+          const scheme = parts.shift();
+          const data = parts.join('://');
+
+          document.getElementById('longOnclickBtn').onclick = createOnClickHandler(input, data, scheme);
+          document.getElementById('shortOnclickBtn').onclick = createOnClickHandler('https://grab.onelink.me/2695613898/GrabFood', data, scheme);
+          document.getElementById('customOnclickBtn').onclick = function() {
+            const inputValue = document.getElementById('urlInput').value;
+            const encodedUrl = encodeURI(inputValue);
+            const intentUrl = `intent://${data}#Intent;scheme=${scheme};S.browser_fallback_url=${encodedUrl};end`;
+            window.location.href = intentUrl;
+          }
+          
+          function createOnClickHandler(fallbackUrl, data, scheme) {
+            return function() {
+              const encodedUrl = encodeURI(fallbackUrl);
+              const intentUrl = `intent://${data}#Intent;scheme=${scheme};S.browser_fallback_url=${encodedUrl};end`;
+              window.location.href = intentUrl;
+            };
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>
